@@ -10,14 +10,14 @@ const c = 55
 const f1 = () => {
     console.log(a)
     console.log(b)
-    b="hello"
+    b = "hello"
     console.log(b)
     console.log(c)
 }
 
 f1()
 
-    console.log(b)
+console.log(b)
 
 //Переменные, которые определены внутри фигурных скобок, нельзя получить или изменить снаружи. 
 
@@ -28,9 +28,9 @@ const f2 = () => {
     const g = 55
 }
 
-    console.log(e)
-    console.log(f)
-    console.log(g)
+console.log(e)
+console.log(f)
+console.log(g)
 
     // один раз выпадет ошибка и ломается скрипт.
 
