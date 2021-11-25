@@ -22,12 +22,11 @@ const res = summaNum(1, 9);
 console.log(res)
 
 
-// let bid1 = document.getElementById("but1")
-// console.log(bid1)
-// function butClick() {
-//     console.log("Click!")
-// }
-// bid1.addEventListener('click', butClick)
+let pressButton = document.getElementById("but1")
+function butClick() {
+    console.log("Click!")
+}
+pressButton.addEventListener('click', butClick)
 
 
 
