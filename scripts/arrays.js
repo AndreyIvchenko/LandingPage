@@ -60,10 +60,10 @@ function convertArray(data) {
       if (typeof item === 'symbol') return 'symbol'
       return typeof item
     })
-    console.log(newArray)
+    return newArray;
   }
   else {
-    console.log(["param is not an array"]);
+    return ["param is not an array"];
   }
 }
 convertArray(arr)
