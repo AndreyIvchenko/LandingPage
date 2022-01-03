@@ -1,5 +1,4 @@
-
-const arr = [
+const arr1 = [
   {},
   -Infinity,
   "",
@@ -19,32 +18,35 @@ const arr = [
   Symbol("Hello!"),
   { a: typeof String("сам Hello") }
 ]
-/*
-arr Array[
-    "object",
-    "-Infinity",
-    "string",
-    "undefined",
-    "number",
-    "number",
-    "string",
-    "Array",
-    "Array",
-    "null",
-    "NaN",
-    "boolean",
-    "boolean",
-    "function",
-    "function",
-    "Infinity",
-    "symbol",
-    "object",
-  ]
-// если входящий параметр не массив =
-// вернуть массив с одним элементом типа string с текстом "param is not an array"*/
 
-function convertArray(data) {
-  if (Array.isArray(data)) {
+const arrTypStr = [
+  "object",
+  "-Infinity",
+  "string",
+  "undefined",
+  "number",
+  "number",
+  "string",
+  "Array",
+  "Array",
+  "null",
+  "NaN",
+  "boolean",
+  "boolean",
+  "function",
+  "function",
+  "Infinity",
+  "symbol",
+  "object",
+];
+// функция получает массив типов, возвращает массив с одним элементом типа string 
+// если входящий параметр не массив возвращает "no array"
+
+function getTypes(data) {
+  if (!Array.isArray(data)) {
+    return ["no array"];
+  }
+  else {
     const newArray = data.map((item, index, array) => {
       if (item === Infinity) return 'Infinity'
       if (item === -Infinity) return '-Infinity'
@@ -62,57 +64,16 @@ function convertArray(data) {
     })
     return newArray;
   }
-  else {
-    return ["param is not an array"];
-  }
 }
-convertArray(arr)
+getTypes(arr1)
 
-// arr.forEach(function (item) {
-//   console.log(typeof item)
-// }) //перебор массива и тайп в консоль
-// let objNaN = Object.is(NaN, NaN)
-// console.log(objNaN) //сравнивает нан и нан
-// console.log(arr.includes(Infinity));
-// console.log(arr.toString)
+//function test 
+const arr2 = ["Hello", 45, true]
+const arr3 = ["string", "number", "boolean"]
 
-// var str = arr.toLocaleString()
-// console.log(str) возврат данных в строке
-//  1. Проверить, является ли объект функцией массива:
-//splice -'швейцарский нож' для работы с масс
-/*slice -Он возвращает новый массив, в который копирует элементы,
-начиная с индекса start и до end (не включая end).
-Оба индекса start и end могут быть отрицательными.
-В таком случае отсчёт будет осуществляться с конца массива.
-concat
- Concat - метод arr.concat создаёт новый массив, в
-который копирует данные из других массивов и
-дополнительные значения.
-  Перебор: forEach
-Метод arr.forEach позволяет запускать функцию для каждого элемента массива.
-Его синтаксис:
-arr.forEach(function(item, index, array) {
-  // ... делать что-то с item
-});
-
-*/
-// let ma = [1, 2, 2, 3, 4, 5]
-// let del = ma.splice(2, 1)// del 2
-// // console.log(ma)
-
-// let ma2 = [1, 2, 4, 5]
-// let add = ma2.splice(2, 0, 3) //del 0,add 3
-// console.log(ma2)
-
-//2 Перебрать массив на typeof
-
-// function returnTypeOf(typArg) {
-//   return
-// }
-// returnTypeOf()
-
-// let arr1 = [1, "1", [1, 2]];
-// //for перебор
-// for (let array of arr1) {
-//   console.log(typeof array)
-// }
+function test(arr, arrForCompare) {
+  const types = getTypes(arr);
+  const types2 = arrForCompare
+  return JSON.stringify(types) == JSON.stringify(types2);
+}
+test(arr2, arr3)
