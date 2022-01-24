@@ -1,0 +1,19 @@
+header{
+  text-align: center;
+  background-color: aquamarine;
+  height: 100px;
+  width: auto;
+}
+footer{
+  text-align: center;
+  background-color: aquamarine;
+  height:auto;
+  width: auto;
+}
+div{
+  margin: 20px;
+  height:auto ;
+}
+#resultat{
+  width: 30px;
+}
